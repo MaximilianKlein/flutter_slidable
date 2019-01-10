@@ -34,6 +34,7 @@ abstract class ClosableSlideAction extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return GestureDetector(
+      behavior: HitTestBehavior.opaque,
       onTap: !closeOnTap ? onTap : () => _handleCloseAfterTap(context),
       child: buildAction(context),
     );
