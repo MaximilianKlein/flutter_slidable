@@ -633,6 +633,13 @@ class SlidableState extends State<Slidable>
     }
   }
 
+  bool isOpen() {
+    if (_overallMoveController.value.abs() > 0.1) {
+      return true;
+    }
+    return false;
+  }
+
   void _flingAnimationController() {
     if (!_dismissing) {
       _overallMoveController.fling(velocity: -1.0);
